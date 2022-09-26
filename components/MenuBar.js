@@ -15,13 +15,13 @@ export default function MenuBar() {
 
         {/*Menu*/}
         <div className="mt-4 mb-2.5 xl:items-start flex-shrink-0">
-        <MenuItems texto="Inicial" Icon={HomeIcon} active/>
-        <MenuItems texto="Perfil" Icon={UserCircleIcon}/>
+          <MenuItems texto="Inicial" Icon={HomeIcon} active/>
+          <MenuItems texto="Perfil" Icon={UserCircleIcon}/>
         </div>
 
         {/*Botão*/}
 
-        <button className="bg-pink-700 text-white rounded-full w-56 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline">
+        <button className="bg-pink-900 text-white rounded-full w-56 h-12 font-bold shadow-md hover:gray-800 text-lg hidden xl:inline">
           Evento
         </button>
 

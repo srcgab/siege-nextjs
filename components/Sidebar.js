@@ -8,9 +8,9 @@ export default function Sidebar() {
 
       {/*Barra de pesquisa*/}
         <div className="flex items-center p-3 rounded-full  relative">
-          <SearchIcon className="h-5 z-50 text-gray-500" />
+          <SearchIcon className="h-5 z-50 text-gray-500 focus:pink-900" />
           <input
-            className="absolute inset-0 rounded-full pl-11 border-gray-500 text-gray-700 focus:shadow-lg focus:bg-white bg-gray-100 "
+            className="absolute inset-0 rounded-full pl-11 text-gray-700 focus:shadow-lg bg-gray-900 "
             type="text"
             placeholder='Pesquise por um evento'
           />
