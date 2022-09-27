@@ -8,8 +8,7 @@ import Post from "./Post";
 export default function Feed() {
   {/*implementação do database para o feed */}
   const [posts, setPosts] = useState([]);
-  useEffect ( () =>
-    onSnapshot (
+  useEffect ( () => onSnapshot (
       query(collection(db, "posts"), orderBy("timestamp", "desc")),
       (snapshot) => {
         setPosts(snapshot.docs);
