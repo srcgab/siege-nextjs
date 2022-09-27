@@ -1,29 +1,22 @@
 import { CalendarIcon } from "@heroicons/react/outline";
-import { useState } from "react";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { db } from "../firebase";
 import Input from "./NewPost";
 import Post from "./Post";
 
 export default function Feed() {
-  const posts = [{
-    id: "1",
-    name: "Admin",
-    userImg: "https://media.istockphoto.com/vectors/yellow-newborn-chicken-emoji-vector-illustration-vector-id1389496400?s=612x612",
-    img: "https://media.istockphoto.com/photos/young-asian-man-with-eyes-closed-enjoying-music-over-headphones-while-picture-id1347685599?s=612x612",
-    text: "DIGA NÃO AS DROGAS",
-    timestamp: "2 min atras"
-  },
-  {
-    id: "1",
-    name: "Admin",
-    userImg: "https://media.istockphoto.com/vectors/yellow-newborn-chicken-emoji-vector-illustration-vector-id1389496400?s=612x612",
-    img: "https://media.istockphoto.com/photos/young-asian-man-with-eyes-closed-enjoying-music-over-headphones-while-picture-id1347685599?s=612x612",
-    text: "DIGA NÃO AS DROGAS",
-    timestamp: "2 min atras"
-  },
-    
-
-]
+  {/*implementação do database para o feed */}
+  const [posts, setPosts] = useState([]);
+  useEffect ( () =>
+    onSnapshot (
+      query(collection(db, "posts"), orderBy("timestamp", "desc")),
+      (snapshot) => {
+        setPosts(snapshot.docs);
+      }
+    ),
+   []
+  ); 
   
   return (
 <div className="xl:ml-[370px] border-l border-r border-gray-200  xl:min-w-[576px] sm:ml-[73px] flex-grow max-w-xl">

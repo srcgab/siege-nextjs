@@ -74,7 +74,7 @@ export default function Input() {
                 <textarea
                 className="w-full border-none focus:ring-0 text-lg placeholder-gray-600 tracking-wide min-h-[50px] text-gray-700"
                 rows="2"
-                placeholder="Pesquise por um evento"
+                placeholder="Publique um novo evento"
                 
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
