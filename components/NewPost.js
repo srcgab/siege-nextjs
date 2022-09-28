@@ -3,7 +3,6 @@ import { addDoc, collection, serverTimestamp, updateDoc, doc } from "firebase/fi
 import { useRef, useState } from "react";
 import { db, storage } from "../firebase";
 import { getDownloadURL, ref, uploadString } from 'firebase/storage';
-import Perfil from "../img/1.png";
 import { XIcon } from "@heroicons/react/solid";
 
 /*Criar novo post*/
@@ -13,7 +12,7 @@ export default function Input() {
     const [selectedFile, setSelectedFile] = useState(null);
     const [loading, setLoading] = useState(false);
     const filePickerRef = useRef(null);
-
+    
     {/*Enviar o post pro database*/}
     const sendPost = async () => {
 
@@ -64,8 +63,8 @@ export default function Input() {
 
   return (
     <div className="flex  border-b border-gray-200 p-3 space-x-3">
-        <img className="h-11 w-11 rounded-full cursor-pointer hover:brightness-95"
-            src={Perfil}
+        <img className="h-11 w-11 rounded-full mr-4"
+            src="https://images.unsplash.com/photo-1465153690352-10c1b29577f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZHVja3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60"
             alt="img-profile"
         />
        
@@ -75,18 +74,17 @@ export default function Input() {
                 className="w-full border-none focus:ring-0 text-lg placeholder-gray-600 tracking-wide min-h-[50px] text-gray-700"
                 rows="2"
                 placeholder="Publique um novo evento"
-                
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
               ></textarea>
             </div>
 
             {/*exibir a imagem antes de postar*/}
-            {setSelectedFile && (
+            {selectedFile && (
                 <div className="relative">
                     <XIcon 
                     onClick={() => setSelectedFile(null)}
-                    className="h-7 text-black absolute cursor-pointer shadow-md border-white m-1 rounded-full"
+                    className="w-5 h-7 text-black absolute cursor-pointer shadow-md border-white m-1 rounded-full"
                     />
                     <img src={selectedFile} className={`${loading && "animate-pulse"}`} />
                 </div>

@@ -29,7 +29,7 @@ export default function MenuBar() {
         {/*Usuário/Sair*/}
         <div className="hoverEffect text-gray-700 flex items-center justify-center xl:justify-start mt-auto">
           <img
-              src = './imgs/1.png'
+              src = "https://images.unsplash.com/photo-1465153690352-10c1b29577f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZHVja3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60"
               alt="user-img"
               className="h-10 w-10 rounded-full xl:mr-2"
           />

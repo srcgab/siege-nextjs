@@ -1,13 +1,6 @@
 import {
     DotsHorizontalIcon,
   } from "@heroicons/react/outline";
-  import Moment from "react-moment";
-  import {
-    collection,
-    doc,
-  } from "firebase/firestore";
-  import { db, storage } from "../firebase";
-
   
   export default function Post({ post, id }) {
   
@@ -17,7 +10,7 @@ import {
         {/* user img*/}
         <img
           className="h-11 w-11 rounded-full mr-4"
-          src={post.data().userImg}
+          src="https://images.unsplash.com/photo-1465153690352-10c1b29577f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZHVja3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60"
           alt="user-img"
         />
 
@@ -28,7 +21,7 @@ import {
             {/*user infos e data*/}
             <div className="flex items-center space-x-1 whitespace-nowrap">
               <h4 className="font-bold text-[15px] sm:text-[16px] hover:underline">
-                {post.data().name}
+                Administrador
               </h4>
   
               <span className="text-sm sm:text-[15px] hover:underline">
@@ -54,8 +47,8 @@ import {
           <img
             onClick={() => router.push(`/posts/${id}`)}
             className="rounded-2xl mr-2"
-            src={post.data().image}
-            alt="post-img"
+            src={post.data()?.image}
+            alt=""
           />
 
           {/*icon e seletor de tag -implementação-*/}
