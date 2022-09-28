@@ -16,6 +16,15 @@ export default function Sidebar() {
           />
         </div>
         {/*Notícias do Cefet - implementação futura*/}
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+
       </div>
     </div>
   )
